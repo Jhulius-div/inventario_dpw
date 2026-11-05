@@ -12,14 +12,12 @@ class DashboardController extends Controller
         $stockTotal = Producto::sum('stock');
         $totalCategorias = Producto::distinct('categoria')->count('categoria');
         $stockBajo = Producto::where('stock', '<=', 10)->count();
-        $ultimos = Producto::orderByDesc('idproducto')->take(5)->get();
 
         return view('dashboard', compact(
             'totalProductos',
             'stockTotal',
             'totalCategorias',
-            'stockBajo',
-            'ultimos'
+            'stockBajo'
         ));
     }
 }

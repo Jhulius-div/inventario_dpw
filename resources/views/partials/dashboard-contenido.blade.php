@@ -1,0 +1,260 @@
+
+          <!-- Dashboard Stats -->
+          <div class="row g-4 mb-4">
+            <div class="col-xl-3 col-lg-6">
+              <div class="card stat-card bg-flat-color-1">
+                <div class="card-body">
+                  <div class="stat-icon color-white">
+                    <i class="fa-solid fa-box"></i>
+                  </div>
+                  <div class="stat-value color-white">{{ $totalProductos }}</div>
+                  <div class="stat-label color-white">Productos</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6">
+              <div class="card stat-card bg-flat-color-2">
+                <div class="card-body">
+                  <div class="stat-icon color-white">
+                    <i class="fa-solid fa-cubes"></i>
+                  </div>
+                  <div class="stat-value color-white">{{ $stockTotal }}</div>
+                  <div class="stat-label color-white">Stock total</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6">
+              <div class="card stat-card bg-flat-color-3">
+                <div class="card-body">
+                  <div class="stat-icon color-white">
+                    <i class="fa-solid fa-tags"></i>
+                  </div>
+                  <div class="stat-value color-white">{{ $totalCategorias }}</div>
+                  <div class="stat-label color-white">Categorías</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6">
+              <div class="card stat-card bg-flat-color-4">
+                <div class="card-body">
+                  <div class="stat-icon color-white">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                  </div>
+                  <div class="stat-value color-white">{{ $stockBajo }}</div>
+                  <div class="stat-label color-white">Stock bajo (≤ 10)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Row -->
+          <div class="row g-4 mb-4">
+            <div class="col-xl-8">
+              <div class="card chart-card h-100">
+                <div class="card-header d-flex align-items-center">
+                  <h5 class="card-title mb-0">Sales Overview</h5>
+                  <div class="card-actions ms-auto">
+                    <button class="btn btn-sm btn-outline-secondary">
+                      <i class="fa-solid fa-download"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="chart-container" style="height: 350px">
+                    <canvas id="sales-chart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4">
+              <div class="card chart-card h-100">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Traffic Sources</h5>
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <div class="chart-container" style="height: 250px">
+                    <canvas id="doughnut-chart"></canvas>
+                  </div>
+                  <div class="chart-legend mt-auto">
+                    <div class="legend-item">
+                      <span class="legend-color" style="background: #007bff"></span>
+                      <span class="legend-label">Direct</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-color" style="background: #28a745"></span>
+                      <span class="legend-label">Social</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-color" style="background: #ffc107"></span>
+                      <span class="legend-label">Referral</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity and Tasks Row -->
+          <div class="row g-4">
+            <div class="col-xl-6">
+              <div class="card activity-card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Recent Activity</h5>
+                </div>
+                <div class="card-body">
+                  <div class="activity-item">
+                    <div class="activity-icon bg-primary text-white">
+                      <i class="fa-solid fa-shopping-bag"></i>
+                    </div>
+                    <div class="activity-content">
+                      <div class="activity-title">New order received</div>
+                      <div class="activity-description">Order #12345 from John Doe</div>
+                      <div class="activity-time">2 minutes ago</div>
+                    </div>
+                  </div>
+
+                  <div class="activity-item">
+                    <div class="activity-icon bg-success text-white">
+                      <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <div class="activity-content">
+                      <div class="activity-title">New customer registered</div>
+                      <div class="activity-description">Jane Smith joined the platform</div>
+                      <div class="activity-time">15 minutes ago</div>
+                    </div>
+                  </div>
+
+                  <div class="activity-item">
+                    <div class="activity-icon bg-warning text-white">
+                      <i class="fa-solid fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="activity-content">
+                      <div class="activity-title">Low stock alert</div>
+                      <div class="activity-description">Product SKU #789 is running low</div>
+                      <div class="activity-time">1 hour ago</div>
+                    </div>
+                  </div>
+
+                  <div class="activity-item">
+                    <div class="activity-icon bg-info text-white">
+                      <i class="fa-solid fa-comment"></i>
+                    </div>
+                    <div class="activity-content">
+                      <div class="activity-title">New review posted</div>
+                      <div class="activity-description">5-star review on Product XYZ</div>
+                      <div class="activity-time">3 hours ago</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">Top Products</h5>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Product</th>
+                          <th>Sales</th>
+                          <th>Revenue</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <div
+                                class="rounded me-2 d-flex align-items-center justify-content-center"
+                                style="
+                                  width: 40px;
+                                  height: 40px;
+                                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                                "
+                              >
+                                <i class="fas fa-box text-white"></i>
+                              </div>
+                              <span>Premium Widget</span>
+                            </div>
+                          </td>
+                          <td>245</td>
+                          <td>$12,250</td>
+                          <td><span class="badge bg-success">In Stock</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <div
+                                class="rounded me-2 d-flex align-items-center justify-content-center"
+                                style="
+                                  width: 40px;
+                                  height: 40px;
+                                  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                                "
+                              >
+                                <i class="fas fa-cube text-white"></i>
+                              </div>
+                              <span>Standard Package</span>
+                            </div>
+                          </td>
+                          <td>189</td>
+                          <td>$9,450</td>
+                          <td><span class="badge bg-success">In Stock</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <div
+                                class="rounded me-2 d-flex align-items-center justify-content-center"
+                                style="
+                                  width: 40px;
+                                  height: 40px;
+                                  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                                "
+                              >
+                                <i class="fas fa-layer-group text-white"></i>
+                              </div>
+                              <span>Basic Module</span>
+                            </div>
+                          </td>
+                          <td>156</td>
+                          <td>$4,680</td>
+                          <td><span class="badge bg-warning">Low Stock</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <div
+                                class="rounded me-2 d-flex align-items-center justify-content-center"
+                                style="
+                                  width: 40px;
+                                  height: 40px;
+                                  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+                                "
+                              >
+                                <i class="fas fa-gift text-white"></i>
+                              </div>
+                              <span>Pro Bundle</span>
+                            </div>
+                          </td>
+                          <td>98</td>
+                          <td>$19,600</td>
+                          <td><span class="badge bg-success">In Stock</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
